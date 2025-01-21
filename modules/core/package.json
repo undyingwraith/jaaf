@@ -1,0 +1,20 @@
+{
+	"name": "jaaf-core",
+	"main": "./dist/index.js",
+	"type": "module",
+	"repository": "github:undyingwraith/jaaf",
+	"scripts": {
+		"watch": "tsc --watch",
+		"build": "tsc",
+		"test": "vitest run"
+	},
+	"devDependencies": {
+		"typescript": "^5.7.3",
+		"vitest": "^3.0.3"
+	},
+	"dependencies": {
+		"i18next": "^24.2.1",
+		"inversify": "^6.2.1",
+		"reflect-metadata": "^0.2.2"
+	}
+}

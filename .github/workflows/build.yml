@@ -13,5 +13,9 @@ jobs:
       run: yarn --immutable --check-cache
     - name: Run build
       run: yarn build
+    - name: Install test runner
+      run: |
+        cd ./modules/ui
+        yarn playwright install
     - name: Run tests
       run: yarn test

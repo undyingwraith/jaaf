@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { userEvent } from '@vitest/browser/context';
-import { Application } from 'jaaf-core';
+import { Application } from '@undyingwraith/jaaf-core';
 import { HotkeyService, IHotkeyService, IHotkeyServiceSymbol } from '../src';
 
 describe('HotkeyService', () => {

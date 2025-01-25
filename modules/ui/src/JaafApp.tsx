@@ -1,4 +1,4 @@
-import { IModule } from 'jaaf-core';
+import { IModule } from '@undyingwraith/jaaf-core';
 import { Router } from 'wouter-preact';
 import { useHashLocation } from 'wouter-preact/use-hash-location';
 import { AppContextProvider } from './context';

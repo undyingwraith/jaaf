@@ -1,5 +1,5 @@
 import { useComputed, useSignal, useSignalEffect } from '@preact/signals';
-import { Application, IModule } from 'jaaf-core';
+import { Application, IModule } from '@undyingwraith/jaaf-core';
 import { ComponentChildren, createContext } from 'preact';
 import { useContext } from 'preact/hooks';
 import { Loader } from '../components';

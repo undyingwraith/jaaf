@@ -25,4 +25,4 @@ jobs:
       run: yarn workspaces foreach -A --no-private npm publish --access public
       if: ${{ github.ref == 'refs/heads/master' }}
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1244,6 +1244,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@undyingwraith/jaaf-browser@workspace:^, @undyingwraith/jaaf-browser@workspace:modules/browser":
+  version: 0.0.0-use.local
+  resolution: "@undyingwraith/jaaf-browser@workspace:modules/browser"
+  dependencies:
+    "@vitest/browser": "npm:^3.0.3"
+    inversify: "npm:^6.2.1"
+    jaaf-core: "workspace:^"
+    jsdom: "npm:^26.0.0"
+    playwright: "npm:^1.49.1"
+    vitest: "npm:^3.0.3"
+  languageName: unknown
+  linkType: soft
+
 "@vitest/browser@npm:^3.0.3":
   version: 3.0.3
   resolution: "@vitest/browser@npm:3.0.3"
@@ -3018,19 +3031,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jaaf-browser@workspace:^, jaaf-browser@workspace:modules/browser":
-  version: 0.0.0-use.local
-  resolution: "jaaf-browser@workspace:modules/browser"
-  dependencies:
-    "@vitest/browser": "npm:^3.0.3"
-    inversify: "npm:^6.2.1"
-    jaaf-core: "workspace:^"
-    jsdom: "npm:^26.0.0"
-    playwright: "npm:^1.49.1"
-    vitest: "npm:^3.0.3"
-  languageName: unknown
-  linkType: soft
-
 "jaaf-core@workspace:^, jaaf-core@workspace:modules/core":
   version: 0.0.0-use.local
   resolution: "jaaf-core@workspace:modules/core"
@@ -3053,8 +3053,8 @@ __metadata:
     "@testing-library/preact": "npm:^3.2.4"
     "@types/babel__core": "npm:^7.20.5"
     "@types/node": "npm:^22.10.7"
+    "@undyingwraith/jaaf-browser": "workspace:^"
     "@vitest/browser": "npm:^3.0.3"
-    jaaf-browser: "workspace:^"
     jaaf-core: "workspace:^"
     jsdom: "npm:^26.0.0"
     playwright: "npm:^1.49.1"

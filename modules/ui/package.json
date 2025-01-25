@@ -39,7 +39,7 @@
 	},
 	"dependencies": {
 		"@preact/signals": "^2.0.1",
-		"jaaf-browser": "workspace:^",
+		"@undyingwraith/jaaf-browser": "workspace:^",
 		"jaaf-core": "workspace:^",
 		"preact": "^10.25.4",
 		"wouter-preact": "^3.3.5"

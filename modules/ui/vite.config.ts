@@ -25,12 +25,20 @@ export default defineConfig(({ mode }) => ({
 		rollupOptions: {
 			preserveSymlinks: true,
 			external: [
+				'@preact/signals',
+				'jaaf-browser',
+				'jaaf-core',
+				'preact',
 				'wouter-preact',
 			],
 			output: {
 				// Provide global variables to use in the UMD build
 				// for externalized deps
 				globals: {
+					'@preact/signals': 'signals',
+					'jaaf-core': 'jaafCore',
+					'preact': 'preact',
+					'wouter-preact': 'wouterPreact',
 				},
 			},
 		},

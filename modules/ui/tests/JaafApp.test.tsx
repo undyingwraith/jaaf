@@ -1,11 +1,15 @@
 import { describe, expect, test } from 'vitest';
 import { render } from '@testing-library/preact';
-import { Loader } from '../../../src';
+import { JaafApp } from '../src';
 
-describe('Loader', () => {
+describe('JaafApp', () => {
 	test('Renders correctly', () => {
 		const t = render((
-			<Loader />
+			<JaafApp setup={(app) => {
+
+			}}>
+				<div>TEST</div>
+			</JaafApp>
 		));
 		expect(t).toMatchSnapshot();
 	});

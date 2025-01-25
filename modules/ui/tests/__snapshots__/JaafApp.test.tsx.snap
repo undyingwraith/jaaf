@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Loader > Renders correctly 1`] = `
+exports[`JaafApp > Renders correctly 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -13,14 +13,22 @@ exports[`Loader > Renders correctly 1`] = `
     <vite-plugin-checker-error-overlay />
     <div>
       <div
-        class="_loader_r3zqk_1"
-      />
+        style="--accent-color: #6200EE;"
+      >
+        <div>
+          TEST
+        </div>
+      </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="_loader_r3zqk_1"
-    />
+      style="--accent-color: #6200EE;"
+    >
+      <div>
+        TEST
+      </div>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

@@ -21,7 +21,7 @@ jobs:
     - name: Run tests
       run: yarn test
     - name: Publish packages
-      run: yarn workspaces foreach -At run npm publish
+      run: yarn workspaces foreach -A --no-private npm publish --access public
       if: ${{ github.ref == 'refs/heads/master' }}
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

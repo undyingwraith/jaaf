@@ -10,8 +10,8 @@
 		"test": "vitest run"
 	},
 	"dependencies": {
-		"inversify": "^6.2.1",
-		"jaaf-core": "workspace:^"
+		"@undyingwraith/jaaf-core": "workspace:^",
+		"inversify": "^6.2.1"
 	},
 	"devDependencies": {
 		"@vitest/browser": "^3.0.3",

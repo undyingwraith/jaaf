@@ -20,7 +20,7 @@ jobs:
     - name: Run tests
       run: yarn test
     - name: Publish packages
-      run: yarn workspaces foreach -A --no-private npm publish --access public
+      run: yarn workspaces foreach -A --no-private npm publish --access public --tolerate-republish
       if: ${{ github.ref == 'refs/heads/master' }}
       env:
         YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

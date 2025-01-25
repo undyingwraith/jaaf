@@ -1,5 +1,5 @@
 {
-	"name": "jaaf-ui",
+	"name": "@undyingwraith/jaaf-ui",
 	"type": "module",
 	"version": "0.1.0",
 	"repository": "github:undyingwraith/jaaf",
@@ -40,7 +40,7 @@
 	"dependencies": {
 		"@preact/signals": "^2.0.1",
 		"@undyingwraith/jaaf-browser": "workspace:^",
-		"jaaf-core": "workspace:^",
+		"@undyingwraith/jaaf-core": "workspace:^",
 		"preact": "^10.25.4",
 		"wouter-preact": "^3.3.5"
 	}

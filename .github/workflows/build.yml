@@ -19,3 +19,8 @@ jobs:
         yarn playwright install
     - name: Run tests
       run: yarn test
+    - uses: JS-DevTools/npm-publish@v3
+      if: ${{ github.ref == 'refs/heads/master' }}
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        registry: "https://npm.pkg.github.com"

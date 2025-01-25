@@ -1,9 +1,10 @@
 {
 	"name": "jaaf-ui",
 	"type": "module",
+	"version": "0.1.0",
+	"repository": "github:undyingwraith/jaaf",
 	"main": "./dist/index.umd.cjs",
 	"module": "./dist/index.js",
-	"typings": "./dist/index.d.ts",
 	"types": "./dist/index.d.ts",
 	"files": [
 		"dist"
@@ -11,10 +12,10 @@
 	"exports": {
 		".": {
 			"import": "./dist/index.js",
-			"require": "./dist/index.umd.cjs"
+			"require": "./dist/index.umd.cjs",
+			"types": "./dist/index.d.ts"
 		}
 	},
-	"repository": "github:undyingwraith/jaaf",
 	"scripts": {
 		"watch": "vite",
 		"build": "vite build",

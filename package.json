@@ -1,6 +1,6 @@
 {
 	"name": "jaaf",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Just Another App Framework",
 	"author": "UndyingWraith",
 	"license": "MIT",
@@ -13,7 +13,8 @@
 	"scripts": {
 		"watch": "yarn workspaces foreach -Api run watch",
 		"build": "yarn workspaces foreach -At run build",
-		"test": "yarn workspaces foreach -At run test"
+		"test": "yarn workspaces foreach -At run test",
+		"update": "yarn workspaces foreach -A version"
 	},
 	"devDependencies": {
 		"typescript": "^5.7.3"

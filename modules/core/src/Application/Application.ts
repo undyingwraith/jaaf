@@ -1,7 +1,7 @@
 import { Container, interfaces } from 'inversify';
 import { IApplication, IApplicationSymbol } from './IApplication';
-import { IModule } from './IModule';
 import { IApplicationRegistration } from './IApplicationRegistration';
+import { IModule } from './IModule';
 
 export class Application implements IApplication, IApplicationRegistration {
 	public constructor(container?: Container) {
@@ -26,6 +26,10 @@ export class Application implements IApplication, IApplicationRegistration {
 		if (this.container.isCurrentBound(identifier)) {
 			this.container.unbind(identifier);
 		}
+		this.container.bind<T>(identifier).to(service);
+	}
+
+	public registerMultiple<T>(service: interfaces.Newable<T>, identifier: symbol) {
 		this.container.bind<T>(identifier).to(service);
 	}
 

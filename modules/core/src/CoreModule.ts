@@ -1,6 +1,7 @@
 import { IModule } from './Application';
-import { ITranslationServiceSymbol, TranslationService } from './Services';
+import { ILogServiceSymbol, ITranslationServiceSymbol, LogService, TranslationService } from './Services';
 
 export const CoreModule: IModule = (app) => {
+	app.register(LogService, ILogServiceSymbol);
 	app.register(TranslationService, ITranslationServiceSymbol);
 };

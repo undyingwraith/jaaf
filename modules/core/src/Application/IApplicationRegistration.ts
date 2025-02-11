@@ -1,5 +1,5 @@
-import { IModule } from './IModule';
 import { interfaces } from 'inversify';
+import { IModule } from './IModule';
 
 export interface IApplicationRegistration {
 	/**
@@ -8,6 +8,13 @@ export interface IApplicationRegistration {
 	 * @param identifier symbol for the service.
 	 */
 	register<T>(service: interfaces.ServiceIdentifier<T>, identifier: symbol): void;
+
+	/**
+	 * Registers a new service without removing previous registrations.
+	 * @param service service to register.
+	 * @param identifier symbol for the service.
+	 */
+	registerMultiple<T>(service: interfaces.Newable<T>, identifier: symbol): void;
 
 	/**
 	 * Registers a new constant.

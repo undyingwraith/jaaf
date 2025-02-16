@@ -1,5 +1,6 @@
 import { interfaces } from 'inversify';
 import { IModule } from './IModule';
+import { IStartupAction } from './IStartupAction';
 
 export interface IApplicationRegistration {
 	/**
@@ -29,6 +30,12 @@ export interface IApplicationRegistration {
 	 * @param identifier symbol for the service.
 	 */
 	registerConstantMultiple<T>(service: T, identifier: symbol): void;
+
+	/**
+	 * Registers a new startup action.
+	 * @param action action to register.
+	 */
+	registerStartupAction(action: IStartupAction): void;
 
 	/**
 	 * Registers a {@link IModule}.

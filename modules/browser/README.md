@@ -11,6 +11,7 @@ import { BrowserModule, type IHotkeyService, IHotkeyServiceSymbol } from 'jaaf-b
 const app = new Application();
 app.use(CoreModule);
 app.use(BrowserModule);
+await app.start();
 
 const service = app.getService<IHotkeyService>(IHotkeyServiceSymbol);
 

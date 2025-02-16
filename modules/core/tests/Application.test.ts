@@ -26,4 +26,56 @@ describe('Application', () => {
 
 		expect(app.getService<TestService>(sym)?.getValue()).toEqual('test');
 	});
+
+	test('App starts without any actions.', async () => {
+		const app = new Application();
+		await app.start();
+	});
+
+	test('Startup runs startup actions.', async () => {
+		const app = new Application();
+
+		let counter = 0;
+		const action = () => {
+			counter++;
+		};
+
+		app.registerStartupAction(action);
+
+		expect(counter).toBe(0);
+
+		await app.start();
+
+		expect(counter).toBe(1);
+	});
+
+	test('Child action does not rerun startup actions.', async () => {
+		const app = new Application();
+
+		let counter = 0;
+		let childCounter = 0;
+		const action = () => {
+			counter++;
+		};
+		const childAction = () => {
+			childCounter++;
+		};
+
+		app.registerStartupAction(action);
+
+		expect(counter).toBe(0);
+		expect(childCounter).toBe(0);
+
+		await app.start();
+
+		expect(counter).toBe(1);
+		expect(childCounter).toBe(0);
+
+		const childApp = app.createChildApplication();
+		childApp.registerStartupAction(childAction);
+		await childApp.start();
+
+		expect(counter).toBe(1);
+		expect(childCounter).toBe(1);
+	});
 });

@@ -9,7 +9,8 @@ export default defineConfig(({ mode }) => ({
 	plugins: [
 		preact(),
 		dts({
-			insertTypesEntry: true,
+			tsconfigPath: resolve(__dirname, './tsconfig.json'),
+			include: ['src'],
 		}),
 		checker({
 			typescript: { buildMode: true }

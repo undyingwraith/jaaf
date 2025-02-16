@@ -4,7 +4,7 @@ import { useHashLocation } from 'wouter-preact/use-hash-location';
 import { AppContextProvider } from './context';
 import { ComponentChildren } from 'preact';
 import { ThemeProvider } from './context';
-import { IThemeServiceSymbol, ThemeService } from './services';
+import { UiModule } from './services/UiModule';
 
 export interface IJaafAppProps {
 	setup: IModule;
@@ -17,7 +17,7 @@ export function JaafApp(props: IJaafAppProps) {
 	return (
 		<Router hook={useHashLocation}>
 			<AppContextProvider setup={(app) => {
-				app.register(ThemeService, IThemeServiceSymbol);
+				app.use(UiModule);
 				setup && setup(app);
 			}}>
 				<ThemeProvider>

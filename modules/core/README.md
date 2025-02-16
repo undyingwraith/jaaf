@@ -9,6 +9,7 @@ import { Application, CoreModule, type ITranslationService, ITranslationServiceS
 
 const app = new Application();
 app.use(CoreModule);
+await app.start();
 
 const service = app.getService<ITranslationService>(ITranslationServiceSymbol);
 

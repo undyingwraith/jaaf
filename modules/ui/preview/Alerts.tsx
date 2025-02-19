@@ -1,15 +1,8 @@
-import { render } from 'preact';
-import { JaafApp } from './JaafApp';
-import { Alert, Loader } from './components';
-import { UiModule } from './services/UiModule';
+import { Alert } from 'src';
 
-render((
-	<JaafApp
-		setup={(app) => {
-			app.use(UiModule);
-		}}
-	>
-		<Loader />
+export function Alerts() {
+	return (<>
+
 		<div>
 			<Alert severity={'success'}>
 				This is a success alert.
@@ -52,5 +45,5 @@ render((
 				This is a error alert.
 			</Alert>
 		</div>
-	</JaafApp>
-), document.getElementById('root')!);
+	</>);
+}

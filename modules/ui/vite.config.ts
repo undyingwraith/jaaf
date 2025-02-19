@@ -4,10 +4,19 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import checker from 'vite-plugin-checker';
 import dts from 'vite-plugin-dts';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig(({ mode }) => ({
 	plugins: [
-		preact(),
+		preact({
+			babel: {
+				plugins: [
+					['@babel/plugin-proposal-decorators', { legacy: true }],
+					['@babel/plugin-proposal-class-properties', { loose: true }],
+					'babel-plugin-parameter-decorator',
+				]
+			}
+		}),
 		dts({
 			tsconfigPath: resolve(__dirname, './tsconfig.json'),
 			include: ['src'],
@@ -15,6 +24,7 @@ export default defineConfig(({ mode }) => ({
 		checker({
 			typescript: { buildMode: true }
 		}),
+		tsconfigPaths(),
 	],
 	build: {
 		lib: {

@@ -1,0 +1,59 @@
+.alert {
+	--transparency: 40%;
+	border-radius: 5px;
+	padding: 5px;
+	display: inline-block;
+}
+
+.alert.outlined {
+	border-width: 2px;
+	border-style: solid;
+	background-color: transparent;
+	color: var(--background-color-contrast);
+}
+
+.alert.default {
+	color: var(--background-color-contrast);
+}
+
+/* Types */
+.success {
+	background-color: var(--success-color);
+	border-color: var(--success-color-dark);
+	color: var(--success-color-contrast);
+}
+
+.success.default {
+	background-color: color-mix(in srgb, var(--success-color) var(--transparency), transparent);
+}
+
+
+.info {
+	background-color: var(--info-color);
+	border-color: var(--info-color-dark);
+	color: var(--info-color-contrast);
+}
+
+.info.default {
+	background-color: color-mix(in srgb, var(--info-color) var(--transparency), transparent);
+}
+
+.warning {
+	background-color: var(--warning-color);
+	border-color: var(--warning-color-dark);
+	color: var(--warning-color-contrast);
+}
+
+.warning.default {
+	background-color: color-mix(in srgb, var(--warning-color) var(--transparency), transparent);
+}
+
+.error {
+	background-color: var(--error-color);
+	border-color: var(--error-color-dark);
+	color: var(--error-color-contrast);
+}
+
+.error.default {
+	background-color: color-mix(in srgb, var(--error-color) var(--transparency), transparent);
+}

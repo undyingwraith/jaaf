@@ -1,10 +1,8 @@
 import { IModule } from '@undyingwraith/jaaf-core';
+import { ComponentChildren } from 'preact';
 import { Router } from 'wouter-preact';
 import { useHashLocation } from 'wouter-preact/use-hash-location';
-import { AppContextProvider } from './context';
-import { ComponentChildren } from 'preact';
-import { ThemeProvider } from './context';
-import { UiModule } from './services/UiModule';
+import { AppContextProvider, ThemeProvider } from './context';
 
 export interface IJaafAppProps {
 	setup: IModule;
@@ -16,10 +14,7 @@ export function JaafApp(props: IJaafAppProps) {
 
 	return (
 		<Router hook={useHashLocation}>
-			<AppContextProvider setup={(app) => {
-				app.use(UiModule);
-				setup && setup(app);
-			}}>
+			<AppContextProvider setup={setup}>
 				<ThemeProvider>
 					{children}
 				</ThemeProvider>

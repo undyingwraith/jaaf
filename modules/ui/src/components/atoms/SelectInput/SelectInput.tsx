@@ -12,6 +12,7 @@ export function SelectInput(props: ISelectInputProps) {
 	return <div>
 		{label}
 		<select
+			data-testid={'input'}
 			onInput={(ev) => {
 				value.value = ev.currentTarget.value;
 			}}

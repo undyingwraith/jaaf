@@ -12,6 +12,7 @@ export function TextInput(props: ITextInputProps) {
 	return <div>
 		{label}
 		<input
+			data-testid={'input'}
 			type={type ?? 'text'}
 			onInput={(ev) => {
 				value.value = ev.currentTarget.value;

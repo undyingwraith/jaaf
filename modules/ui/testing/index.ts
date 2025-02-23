@@ -1,1 +1,1 @@
-export { wait } from './wait';
+export { createWrapper } from './createWrapper';

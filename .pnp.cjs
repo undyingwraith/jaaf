@@ -1866,9 +1866,10 @@ const RAW_RUNTIME_STATE =
           ["@undyingwraith/jaaf-browser", "workspace:modules/browser"],\
           ["@undyingwraith/jaaf-core", "workspace:modules/core"],\
           ["@vitest/browser", "virtual:9be09fad69b27f6bb546e321daad8f7a0add77d660d40e816d59ff518e69fe48d4fe55fddde082cf500b9e14855652f5a49290ead219a541f28fc63b1b283163#npm:3.0.6"],\
-          ["inversify", "virtual:9be09fad69b27f6bb546e321daad8f7a0add77d660d40e816d59ff518e69fe48d4fe55fddde082cf500b9e14855652f5a49290ead219a541f28fc63b1b283163#npm:6.2.2"],\
+          ["inversify", "virtual:b2dcc26c2b408d6ba4c674ae7cf5c419b547b17a3051e650edb9ad4d8feb4fcc65c5b0f268f3af94d27cf84ec4c449ca1fc43a60580e16f64ff0faf840f98366#npm:6.2.2"],\
           ["jsdom", "virtual:9be09fad69b27f6bb546e321daad8f7a0add77d660d40e816d59ff518e69fe48d4fe55fddde082cf500b9e14855652f5a49290ead219a541f28fc63b1b283163#npm:26.0.0"],\
           ["playwright", "npm:1.50.1"],\
+          ["reflect-metadata", "npm:0.2.2"],\
           ["vitest", "virtual:9be09fad69b27f6bb546e321daad8f7a0add77d660d40e816d59ff518e69fe48d4fe55fddde082cf500b9e14855652f5a49290ead219a541f28fc63b1b283163#npm:3.0.6"]\
         ],\
         "linkType": "SOFT"\
@@ -3756,21 +3757,6 @@ const RAW_RUNTIME_STATE =
           ["inversify", "npm:6.2.2"]\
         ],\
         "linkType": "SOFT"\
-      }],\
-      ["virtual:9be09fad69b27f6bb546e321daad8f7a0add77d660d40e816d59ff518e69fe48d4fe55fddde082cf500b9e14855652f5a49290ead219a541f28fc63b1b283163#npm:6.2.2", {\
-        "packageLocation": "./.yarn/__virtual__/inversify-virtual-25730ce415/0/cache/inversify-npm-6.2.2-307769952b-f4acff320c.zip/node_modules/inversify/",\
-        "packageDependencies": [\
-          ["inversify", "virtual:9be09fad69b27f6bb546e321daad8f7a0add77d660d40e816d59ff518e69fe48d4fe55fddde082cf500b9e14855652f5a49290ead219a541f28fc63b1b283163#npm:6.2.2"],\
-          ["@inversifyjs/common", "npm:1.4.0"],\
-          ["@inversifyjs/core", "npm:1.3.5"],\
-          ["@types/reflect-metadata", null],\
-          ["reflect-metadata", null]\
-        ],\
-        "packagePeers": [\
-          "@types/reflect-metadata",\
-          "reflect-metadata"\
-        ],\
-        "linkType": "HARD"\
       }],\
       ["virtual:b2dcc26c2b408d6ba4c674ae7cf5c419b547b17a3051e650edb9ad4d8feb4fcc65c5b0f268f3af94d27cf84ec4c449ca1fc43a60580e16f64ff0faf840f98366#npm:6.2.2", {\
         "packageLocation": "./.yarn/__virtual__/inversify-virtual-56d142e8e7/0/cache/inversify-npm-6.2.2-307769952b-f4acff320c.zip/node_modules/inversify/",\

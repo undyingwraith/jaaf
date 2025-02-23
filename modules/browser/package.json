@@ -2,7 +2,7 @@
 	"name": "@undyingwraith/jaaf-browser",
 	"main": "./dist/index.js",
 	"type": "module",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"repository": "github:undyingwraith/jaaf",
 	"scripts": {
 		"watch": "tsc --watch",

@@ -1,5 +1,7 @@
 import { IKeyValueStorageService } from '@undyingwraith/jaaf-core';
+import { injectable } from 'inversify';
 
+@injectable()
 export class LocalstorageKeyValueStorageService implements IKeyValueStorageService {
 	/**
 	 * @inheritdoc

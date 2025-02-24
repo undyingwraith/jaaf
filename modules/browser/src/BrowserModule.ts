@@ -1,8 +1,8 @@
-import { IKeyValueStorageServiceSymbol, IModule } from '@undyingwraith/jaaf-core';
-import { HotkeyService, IHotkeyServiceSymbol } from './Services';
-import { LocalstorageKeyValueStorageService } from './Services/LocalstorageKeyValueStorageService';
+import { IKeyValueStorageServiceSymbol, ILogSinkSymbol, IModule } from '@undyingwraith/jaaf-core';
+import { ConsoleLogSink, HotkeyService, IHotkeyServiceSymbol, LocalstorageKeyValueStorageService } from './Services';
 
 export const BrowserModule: IModule = (app) => {
 	app.register(HotkeyService, IHotkeyServiceSymbol);
 	app.register(LocalstorageKeyValueStorageService, IKeyValueStorageServiceSymbol);
+	app.register(ConsoleLogSink, ILogSinkSymbol);
 };

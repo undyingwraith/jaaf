@@ -1,5 +1,7 @@
+import { injectable } from 'inversify';
 import { IKeyValueStorageService } from './IKeyValueStorageService';
 
+@injectable()
 export class MemoryKeyValueStorageService implements IKeyValueStorageService {
 	/**
 	 * @inheritdoc

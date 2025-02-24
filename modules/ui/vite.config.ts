@@ -5,6 +5,7 @@ import { defineConfig } from 'vite';
 import checker from 'vite-plugin-checker';
 import dts from 'vite-plugin-dts';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import { configDefaults } from 'vitest/config';
 
 export default defineConfig(({ mode }) => ({
 	plugins: [
@@ -74,6 +75,22 @@ export default defineConfig(({ mode }) => ({
 					browser: 'chromium'
 				}
 			]
+		},
+		coverage: {
+			reporter: ['text', 'json-summary', 'json'],
+			reportOnFailure: true,
+			thresholds: {
+				lines: 60,
+				branches: 60,
+				functions: 60,
+				statements: 60
+			},
+			exclude: [
+				...configDefaults.exclude,
+				'preview',
+				'testing',
+				'**/*.d.ts',
+			],
 		},
 		globals: true,
 		environment: 'jsdom',

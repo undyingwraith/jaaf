@@ -1,6 +1,6 @@
 name: Build
 run-name: Build triggered by @${{ github.actor }}
-on: [push]
+on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,9 +18,12 @@ jobs:
         cd ./modules/ui
         yarn playwright install
     - name: Run tests
-      run: yarn test
+      run: yarn test --coverage
+    - name: Report coverage
+      if: github.event_name == 'pull_request'
+      uses:  davelosert/vitest-coverage-report-action@v2
     - name: Publish packages
-      if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
       run: yarn workspaces foreach -A --no-private npm publish --access public --tolerate-republish
       env:
         YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

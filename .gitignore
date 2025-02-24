@@ -8,4 +8,5 @@ node_modules
 !.yarn/sdks
 !.yarn/versions
 
+coverage
 __screenshots__

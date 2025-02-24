@@ -37,9 +37,12 @@ export default defineConfig(({ mode }) => ({
 			preserveSymlinks: true,
 			external: [
 				'@preact/signals',
-				'jaaf-browser',
-				'jaaf-core',
+				'@undyingwraith/jaaf-browser',
+				'@undyingwraith/jaaf-core',
+				'color',
+				'inversify',
 				'preact',
+				'reflect-metadata',
 				'wouter-preact',
 			],
 			output: {
@@ -47,7 +50,10 @@ export default defineConfig(({ mode }) => ({
 				// for externalized deps
 				globals: {
 					'@preact/signals': 'signals',
-					'jaaf-core': 'jaafCore',
+					'@undyingwraith/jaaf-browser': 'jaafBrowser',
+					'@undyingwraith/jaaf-core': 'jaafCore',
+					'color': 'color',
+					'inversify': 'inversify',
 					'preact': 'preact',
 					'wouter-preact': 'wouterPreact',
 				},

@@ -12,8 +12,8 @@
 	"devDependencies": {
 		"@vitest/coverage-v8": "^3.0.7",
 		"typescript": "^5.7.3",
-		"vite": "^6.1.1",
-		"vitest": "^3.0.6"
+		"vite": "^6.2.0",
+		"vitest": "^3.0.7"
 	},
 	"dependencies": {
 		"i18next": "^24.2.2",

@@ -1,9 +1,20 @@
 {
 	"name": "@undyingwraith/jaaf-core",
-	"main": "./dist/index.js",
 	"type": "module",
 	"version": "0.2.4",
 	"repository": "github:undyingwraith/jaaf",
+	"files": [
+		"dist/**"
+	],
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.js"
+		}
+	},
 	"scripts": {
 		"watch": "tsc --watch --project tsconfig.build.json",
 		"build": "tsc --project tsconfig.build.json",

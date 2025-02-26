@@ -4,6 +4,9 @@
 	"type": "module",
 	"version": "0.2.2",
 	"repository": "github:undyingwraith/jaaf",
+	"files": [
+		"dist/**"
+	],
 	"scripts": {
 		"watch": "tsc --watch --project tsconfig.build.json",
 		"build": "tsc --project tsconfig.build.json",

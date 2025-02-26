@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => ({
 			}
 		}),
 		dts({
-			tsconfigPath: resolve(__dirname, './tsconfig.json'),
+			tsconfigPath: resolve(__dirname, './tsconfig.build.json'),
 			include: ['src'],
 		}),
 		checker({

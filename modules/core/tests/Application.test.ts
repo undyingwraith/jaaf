@@ -78,4 +78,38 @@ describe('Application', () => {
 		expect(counter).toBe(1);
 		expect(childCounter).toBe(1);
 	});
+
+	test('Optional service does not throw an error', () => {
+		const app = new Application();
+		const sym = Symbol.for('test');
+
+		expect(app.getOptionalService(sym)).toEqual(undefined);
+	});
+
+	test('Child app can overwrite parent registration', () => {
+		const sym = Symbol.for('test');
+		const service = 'test';
+		const childService = 'childTest';
+		const app = new Application();
+
+		app.registerConstant(service, sym);
+
+		expect(app.getService(sym)).toEqual(service);
+
+		const childApp = app.createChildApplication();
+		childApp.registerConstant(childService, sym);
+
+		expect(childApp.getService(sym)).toEqual(childService);
+	});
+
+	test('Duplicate registration overwrites old registration', () => {
+		const app = new Application();
+		const sym = Symbol.for('test');
+		const service = 'test';
+
+		app.registerConstant(service, sym);
+		app.registerConstant(service, sym);
+
+		expect(app.getService(sym)).toEqual(service);
+	});
 });

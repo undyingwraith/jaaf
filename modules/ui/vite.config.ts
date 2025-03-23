@@ -29,7 +29,6 @@ export default defineConfig(({ mode }) => ({
 	],
 	build: {
 		lib: {
-			// Could also be a dictionary or array of multiple entry points
 			entry: resolve(__dirname, 'src/index.ts'),
 			name: 'JaafUi',
 			fileName: 'index',
@@ -58,7 +57,7 @@ export default defineConfig(({ mode }) => ({
 					'preact': 'preact',
 					'wouter-preact': 'wouterPreact',
 				},
-			},
+			}
 		},
 		emptyOutDir: mode !== 'dev',
 		sourcemap: mode == 'dev',

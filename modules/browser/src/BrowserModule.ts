@@ -1,8 +1,8 @@
 import { IKeyValueStorageServiceSymbol, ILogSinkSymbol, IModule } from '@undyingwraith/jaaf-core';
 import { ConsoleLogSink, HotkeyService, IHotkeyServiceSymbol, LocalstorageKeyValueStorageService } from './Services';
 
-export const BrowserModule: IModule = (app) => {
-	app.register(HotkeyService, IHotkeyServiceSymbol);
-	app.register(LocalstorageKeyValueStorageService, IKeyValueStorageServiceSymbol);
-	app.register(ConsoleLogSink, ILogSinkSymbol);
+export const BrowserModule: IModule = async (app) => {
+	await app.register(HotkeyService, IHotkeyServiceSymbol);
+	await app.register(LocalstorageKeyValueStorageService, IKeyValueStorageServiceSymbol);
+	await app.register(ConsoleLogSink, ILogSinkSymbol);
 };

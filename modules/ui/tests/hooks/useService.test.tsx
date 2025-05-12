@@ -14,8 +14,8 @@ describe('useService', () => {
 		const TestServiceSymbol = Symbol.for('TestService');
 
 		const r = renderHook(() => useService<any>(TestServiceSymbol), {
-			wrapper: createWrapper((app) => {
-				app.registerConstant(TestService, TestServiceSymbol);
+			wrapper: createWrapper(async (app) => {
+				await app.registerConstant(TestService, TestServiceSymbol);
 			}),
 		});
 

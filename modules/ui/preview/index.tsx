@@ -5,8 +5,8 @@ import { Inputs } from './Inputs';
 
 render((
 	<JaafApp
-		setup={(app) => {
-			app.use(UiModule);
+		setup={async (app) => {
+			await app.use(UiModule);
 		}}
 	>
 		<Loader />

@@ -8,5 +8,8 @@ node_modules
 !.yarn/sdks
 !.yarn/versions
 
+.pnp.cjs
+.pnp.loader.mjs
+
 coverage
 __screenshots__

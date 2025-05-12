@@ -12,9 +12,8 @@ export function AppContextProvider(props: { setup: IModule; children: ComponentC
 
 	useSignalEffect(() => {
 		const app = parentApp?.createChildApplication() ?? new Application();
-		app.use(props.setup);
-
-		app.start()
+		app.use(props.setup)
+			.then(() => app.start())
 			.then(() => {
 				application.value = app;
 			});

@@ -48,8 +48,8 @@
 		"@undyingwraith/jaaf-browser": "workspace:^",
 		"@undyingwraith/jaaf-core": "workspace:^",
 		"color": "^5.0.0",
-		"inversify": "^6.2.2",
-		"preact": "^10.26.2",
+		"inversify": "^7.0.1",
+		"preact": "^10.26.3",
 		"reflect-metadata": "^0.2.2",
 		"wouter-preact": "^3.6.0"
 	}

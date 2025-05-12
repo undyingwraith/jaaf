@@ -20,9 +20,9 @@ const translations: ITranslation = {
 describe('useTranslation', () => {
 	test('Can translate', async () => {
 		const r = renderHook(() => useTranslation(), {
-			wrapper: createWrapper((app) => {
-				app.use(CoreModule);
-				app.registerConstantMultiple(translations, ITranslationsSymbol);
+			wrapper: createWrapper(async (app) => {
+				await app.use(CoreModule);
+				await app.registerConstantMultiple(translations, ITranslationsSymbol);
 			}),
 		});
 
@@ -33,8 +33,8 @@ describe('useTranslation', () => {
 
 	test('Can show missing key', async () => {
 		const r = renderHook(() => useTranslation(), {
-			wrapper: createWrapper((app) => {
-				app.use(CoreModule);
+			wrapper: createWrapper(async (app) => {
+				await app.use(CoreModule);
 			}),
 		});
 

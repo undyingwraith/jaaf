@@ -32,6 +32,12 @@ describe('Application', () => {
 		await app.start();
 	});
 
+	test('Can run startup with any startup actions', async () => {
+		const app = new Application();
+
+		await app.start();
+	});
+
 	test('Startup runs startup actions.', async () => {
 		const app = new Application();
 

@@ -1,4 +1,4 @@
-import { interfaces } from 'inversify';
+import { Newable } from 'inversify';
 import { IModule } from './IModule';
 import { IStartupAction } from './IStartupAction';
 
@@ -8,21 +8,21 @@ export interface IApplicationRegistration {
 	 * @param service service to register.
 	 * @param identifier symbol for the service.
 	 */
-	register<T>(service: interfaces.ServiceIdentifier<T>, identifier: symbol): void;
+	register<T>(service: Newable<T>, identifier: symbol): Promise<void>;
 
 	/**
 	 * Registers a new service without removing previous registrations.
 	 * @param service service to register.
 	 * @param identifier symbol for the service.
 	 */
-	registerMultiple<T>(service: interfaces.Newable<T>, identifier: symbol): void;
+	registerMultiple<T>(service: Newable<T>, identifier: symbol): void;
 
 	/**
 	 * Registers a new constant.
 	 * @param service service to register.
 	 * @param identifier symbol for the service.
 	 */
-	registerConstant<T>(service: T, identifier: symbol): void;
+	registerConstant<T>(service: T, identifier: symbol): Promise<void>;
 
 	/**
 	 * Registers a new constant without removing previous registrations.
@@ -41,5 +41,5 @@ export interface IApplicationRegistration {
 	 * Registers a {@link IModule}.
 	 * @param module {@link IModule} to use in the {@link IApplication}.
 	 */
-	use(module: IModule): void;
+	use(module: IModule): Promise<void>;
 }

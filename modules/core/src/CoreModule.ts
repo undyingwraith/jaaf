@@ -1,8 +1,8 @@
 import { IModule } from './Application';
 import { IKeyValueStorageServiceSymbol, ILogServiceSymbol, ITranslationServiceSymbol, LogService, MemoryKeyValueStorageService, TranslationService } from './Services';
 
-export const CoreModule: IModule = (app) => {
-	app.register(MemoryKeyValueStorageService, IKeyValueStorageServiceSymbol);
-	app.register(LogService, ILogServiceSymbol);
-	app.register(TranslationService, ITranslationServiceSymbol);
+export const CoreModule: IModule = async (app) => {
+	await app.register(MemoryKeyValueStorageService, IKeyValueStorageServiceSymbol);
+	await app.register(LogService, ILogServiceSymbol);
+	await app.register(TranslationService, ITranslationServiceSymbol);
 };

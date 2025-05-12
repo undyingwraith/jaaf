@@ -15,8 +15,8 @@ describe('useOptionalService', () => {
 		};
 
 		const r = renderHook(() => useOptionalService<any>(TestServiceSymbol), {
-			wrapper: createWrapper((app) => {
-				app.registerConstant(TestService, TestServiceSymbol);
+			wrapper: createWrapper(async (app) => {
+				await app.registerConstant(TestService, TestServiceSymbol);
 			}),
 		});
 
@@ -33,7 +33,7 @@ describe('useOptionalService', () => {
 
 	test('Not registered service return undefined', async () => {
 		const r = renderHook(() => useOptionalService<any>(TestServiceSymbol), {
-			wrapper: createWrapper(() => { }),
+			wrapper: createWrapper(() => Promise.resolve()),
 		});
 
 		await waitFor(() => expect(r.result.current).not.toBeNull());

@@ -1,0 +1,34 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.label {
+	color: var(--background-color-contrast-dark);
+	font-size: 0.7rem;
+	position: relative;
+	top: 6px;
+	left: 7px;
+	background-color: var(--background-color);
+	display: inline-block;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.textField {
+	background-color: var(--background-color);
+	color: var(--background-color-contrast);
+	border: 1px solid darkgray;
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 1rem;
+}
+
+.textField:hover {
+	border-color: white;
+}
+
+.textField:focus {
+	border-color: var(--accent-color);
+}

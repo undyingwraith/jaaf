@@ -1,10 +1,9 @@
 import { useComputed } from '@preact/signals';
-import { ComponentChildren } from 'preact';
+import Color, { ColorInstance } from 'color';
 import { useService } from '../hooks';
 import { IThemeService, IThemeServiceSymbol } from '../services';
-import Color, { ColorInstance } from 'color';
 
-export function ThemeProvider(props: { children: ComponentChildren; }) {
+export function ThemeProvider() {
 	const themeService = useService<IThemeService>(IThemeServiceSymbol);
 
 	const error = '#FF0000';
@@ -17,12 +16,14 @@ export function ThemeProvider(props: { children: ComponentChildren; }) {
 		const res: { [key: string]: ColorInstance; } = {};
 		res[`${name}-color`] = color;
 		res[`${name}-color-light`] = color.lighten(colorDiff);
+		res[`${name}-color-light-contrast`] = color.lighten(colorDiff).isDark() ? Color('#FFFFFF') : Color('#000000');
 		res[`${name}-color-dark`] = color.darken(colorDiff);
+		res[`${name}-color-dark-contrast`] = color.darken(colorDiff).isDark() ? Color('#FFFFFF') : Color('#000000');
 		res[`${name}-color-contrast`] = color.isDark() ? Color('#FFFFFF') : Color('#000000');
 		return res;
 	}
 
-	const colors2 = useComputed(() => ([
+	const colors = useComputed(() => ([
 		createColors('accent', Color(themeService.accentColor.value)),
 		createColors('background', Color(themeService.darkMode.value ? '#000000' : '#ffffff')),
 		createColors('success', Color(success)),
@@ -32,15 +33,13 @@ export function ThemeProvider(props: { children: ComponentChildren; }) {
 	])
 		.map(obj => Object.entries(obj))
 		.flat(1)
-		.map(([key, value]) => `--${key}: ${value.hsl().string()};`)
-		.join(' ')
+		.map(([key, value]) => `--${key}: ${value.rgb().string()};`)
+		.join('\n')
 	);
 
-	const css = useComputed(() => `${colors2} background-color: var(--background-color); width: 100%; height: 100%`);
-
 	return (
-		<div style={css}>
-			{props.children}
-		</div>
+		<style>
+			{`:root {\n${colors}\n}\nbody {\nbackground: var(--background-color);\ncolor: var(--background-color-contrast);\n}`}
+		</style>
 	);
 }

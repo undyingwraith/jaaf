@@ -1,7 +1,7 @@
 import { useSignal } from '@preact/signals';
 import { SelectInput, TextInput } from 'src';
 
-export function Inputs() {
+export function InputsPage() {
 	const textValue = useSignal<string>('');
 	const passwordValue = useSignal<string>('');
 	const selectValue = useSignal<string>('one');

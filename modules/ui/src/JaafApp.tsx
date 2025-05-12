@@ -15,9 +15,8 @@ export function JaafApp(props: IJaafAppProps) {
 	return (
 		<Router hook={useHashLocation}>
 			<AppContextProvider setup={setup}>
-				<ThemeProvider>
-					{children}
-				</ThemeProvider>
+				<ThemeProvider />
+				{children}
 			</AppContextProvider>
 		</Router>
 	);

@@ -1,6 +1,6 @@
 import { ComponentChildren } from 'preact';
-import { Header, useTranslation } from 'src';
-import { Link, Route, Switch } from 'wouter-preact';
+import { Header, Link, useTranslation } from 'src';
+import { Route, Switch } from 'wouter-preact';
 import { DataDisplayPage } from './DataDisplayPage';
 import { InputsPage } from './InputsPage';
 import { ThemePage } from './ThemePage';

@@ -1,12 +1,12 @@
 import { IThemeService, IThemeServiceSymbol, TextInput, useService, useTranslation } from 'src';
+import { Section } from './Section';
 
 export function ThemePage() {
 	const _t = useTranslation();
 	const themeService = useService<IThemeService>(IThemeServiceSymbol);
 
 	return (
-		<div>
-			<p>{_t('Theme')}</p>
+		<Section title={_t('Theme')}>
 			<TextInput
 				label={_t('AccentColor')}
 				value={themeService.accentColor}
@@ -30,7 +30,7 @@ export function ThemePage() {
 				<ColorPreview color='info-color-light' />
 				<ColorPreview color='info-color-dark' />
 			</div>
-		</div>
+		</Section>
 	);
 }
 

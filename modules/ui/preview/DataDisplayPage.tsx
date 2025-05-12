@@ -1,14 +1,16 @@
-import { Loader } from 'src';
+import { Loader, useTranslation } from 'src';
 import { Alerts } from './Alerts';
 import { Section } from './Section';
 
 export function DataDisplayPage() {
+	const _t = useTranslation();
+
 	return (
 		<div>
-			<Section title={'Loader'}>
+			<Section title={_t('Loader')}>
 				<Loader />
 			</Section>
-			<Section title={'Alerts'}>
+			<Section title={_t('Alerts')}>
 				<Alerts />
 			</Section>
 		</div>

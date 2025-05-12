@@ -1,9 +1,15 @@
 {
 	"AccentColor": "Akzent Farbe",
+	"Alerts": "Meldebanner",
+	"Button": "Knopf",
+	"ButtonPressed": "Knopf gedrückt.",
+	"Buttons": "Knöpfe",
 	"DarkMode": "Dunkelmodus",
 	"DataDisplay": "Daten Anzeigen",
 	"Home": "Home",
 	"Inputs": "Eingaben",
+	"Loader": "Ladeanzeige",
+	"TextInputs": "Texteingaben",
 	"Theme": "Theme",
 	"WelcomeText": "Wilkommen bei Jaaf-UI"
 }

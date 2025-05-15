@@ -2,14 +2,54 @@
 
 exports[`JaafApp > Renders correctly 1`] = `
 <div>
+  <style>
+    :root {
+--accent-color: rgb(98, 0, 238);
+--accent-color-light: rgb(137, 54, 255);
+--accent-color-light-contrast: rgb(255, 255, 255);
+--accent-color-dark: rgb(69, 0, 167);
+--accent-color-dark-contrast: rgb(255, 255, 255);
+--accent-color-contrast: rgb(255, 255, 255);
+--background-color: rgb(0, 0, 0);
+--background-color-light: rgb(0, 0, 0);
+--background-color-light-contrast: rgb(255, 255, 255);
+--background-color-dark: rgb(0, 0, 0);
+--background-color-dark-contrast: rgb(255, 255, 255);
+--background-color-contrast: rgb(255, 255, 255);
+--success-color: rgb(0, 255, 0);
+--success-color-light: rgb(77, 255, 77);
+--success-color-light-contrast: rgb(0, 0, 0);
+--success-color-dark: rgb(0, 179, 0);
+--success-color-dark-contrast: rgb(255, 255, 255);
+--success-color-contrast: rgb(0, 0, 0);
+--info-color: rgb(0, 0, 255);
+--info-color-light: rgb(77, 77, 255);
+--info-color-light-contrast: rgb(255, 255, 255);
+--info-color-dark: rgb(0, 0, 179);
+--info-color-dark-contrast: rgb(255, 255, 255);
+--info-color-contrast: rgb(255, 255, 255);
+--warning-color: rgb(255, 165, 0);
+--warning-color-light: rgb(255, 192, 77);
+--warning-color-light-contrast: rgb(0, 0, 0);
+--warning-color-dark: rgb(179, 116, 0);
+--warning-color-dark-contrast: rgb(255, 255, 255);
+--warning-color-contrast: rgb(0, 0, 0);
+--error-color: rgb(255, 0, 0);
+--error-color-light: rgb(255, 77, 77);
+--error-color-light-contrast: rgb(255, 255, 255);
+--error-color-dark: rgb(179, 0, 0);
+--error-color-dark-contrast: rgb(255, 255, 255);
+--error-color-contrast: rgb(255, 255, 255);
+}
+body {
+background: var(--background-color);
+color: var(--background-color-contrast);
+}
+  </style>
   <div
-    style="--accent-color: hsl(264.70000000000005, 100%, 46.7%); --accent-color-light: hsl(264.70000000000005, 100%, 60.7%); --accent-color-dark: hsl(264.70000000000005, 100%, 32.7%); --accent-color-contrast: hsl(0, 0%, 100%); --background-color: hsl(0, 0%, 0%); --background-color-light: hsl(0, 0%, 0%); --background-color-dark: hsl(0, 0%, 0%); --background-color-contrast: hsl(0, 0%, 100%); --success-color: hsl(120, 100%, 50%); --success-color-light: hsl(120, 100%, 65%); --success-color-dark: hsl(120, 100%, 35%); --success-color-contrast: hsl(0, 0%, 0%); --info-color: hsl(240, 100%, 50%); --info-color-light: hsl(240, 100%, 65%); --info-color-dark: hsl(240, 100%, 35%); --info-color-contrast: hsl(0, 0%, 100%); --warning-color: hsl(38.80000000000001, 100%, 50%); --warning-color-light: hsl(38.80000000000001, 100%, 65%); --warning-color-dark: hsl(38.80000000000001, 100%, 35%); --warning-color-contrast: hsl(0, 0%, 0%); --error-color: hsl(0, 100%, 50%); --error-color-light: hsl(0, 100%, 65%); --error-color-dark: hsl(0, 100%, 35%); --error-color-contrast: hsl(0, 0%, 100%); background-color: var(--background-color); width: 100%; height: 100%;"
+    data-testid="test"
   >
-    <div
-      data-testid="test"
-    >
-      TEST
-    </div>
+    TEST
   </div>
 </div>
 `;

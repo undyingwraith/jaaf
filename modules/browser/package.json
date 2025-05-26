@@ -1,7 +1,7 @@
 {
 	"name": "@undyingwraith/jaaf-browser",
 	"type": "module",
-	"version": "0.2.4",
+	"version": "0.2.5",
 	"repository": "github:undyingwraith/jaaf",
 	"files": [
 		"dist/**"

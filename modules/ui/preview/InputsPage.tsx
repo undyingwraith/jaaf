@@ -1,5 +1,5 @@
 import { useSignal } from '@preact/signals';
-import { Button, SelectInput, TextInput, useTranslation } from 'src';
+import { Button, ButtonGroup, SelectInput, TextInput, useTranslation } from 'src';
 import { Section } from './Section';
 
 export function InputsPage() {
@@ -9,10 +9,20 @@ export function InputsPage() {
 	const passwordValue = useSignal<string>('');
 	const selectValue = useSignal<string>('one');
 
+	const buttons = (<>
+		<Button onClick={() => alert(_t('ButtonPressed'))}>{_t('Button')}</Button>
+		<Button disabled={true}>{_t('DisabledButton')}</Button>
+	</>);
+
 	return (
 		<div>
 			<Section title={_t('Buttons')}>
-				<Button onClick={() => alert(_t('ButtonPressed'))}>{_t('Button')}</Button>
+				<div>{buttons}</div>
+				<div>
+					<ButtonGroup>
+						{buttons}
+					</ButtonGroup>
+				</div>
 			</Section>
 			<Section title={_t('TextInputs')}>
 				<TextInput

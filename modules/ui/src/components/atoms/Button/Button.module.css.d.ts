@@ -1,5 +1,6 @@
 declare const styles = {
-	button: string
+	button: string,
+	buttonGroup: string,
 };
 
 export default styles;

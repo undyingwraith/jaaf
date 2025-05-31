@@ -1,6 +1,12 @@
-import { JSXInternal } from 'preact/src/jsx';
+import { useComputed } from '@preact/signals';
 import styles from './Button.module.css';
+import { IButtonProps } from './IButtonProps';
 
-export function Button(props: JSXInternal.ButtonHTMLAttributes<HTMLButtonElement>) {
-	return <button class={styles.button} {...props} />;
+export function Button(props: IButtonProps) {
+	const variant = useComputed(() => typeof props.variant === 'undefined' ? 'default' : typeof props.variant === 'string' ? props.variant : props.variant.value);
+	const classNames = useComputed(() => `${styles.button} ${styles[variant.value]}`);
+
+	return (
+		<button class={classNames} {...props} />
+	);
 }

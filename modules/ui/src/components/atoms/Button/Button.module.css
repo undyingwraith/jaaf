@@ -1,6 +1,5 @@
 .button {
-	background-color: var(--accent-color-light);
-	color: var(--accent-color);
+	color: var(--text-color);
 	border-radius: 8px;
 	border: 1px solid transparent;
 	padding: 0.6em 1.2em;
@@ -9,7 +8,8 @@
 	font-family: inherit;
 	background-color: #1a1a1a;
 	cursor: pointer;
-	transition: border-color 0.25s;
+	transition-property: border-color, color;
+	transition-duration: 0.25s;
 }
 
 .button:disabled {
@@ -26,6 +26,45 @@ a.button:hover {
 	outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Variants */
+.button.primary {
+	color: var(--accent-color);
+}
+
+.button.info {
+	color: var(--info-color);
+}
+
+.button.info:not(:disabled):hover {
+	border-color: var(--info-color);
+}
+
+.button.success {
+	color: var(--success-color);
+}
+
+.button.success:not(:disabled):hover {
+	border-color: var(--success-color);
+}
+
+
+.button.warning {
+	color: var(--warning-color);
+}
+
+.button.warning:not(:disabled):hover {
+	border-color: var(--warning-color);
+}
+
+.button.error {
+	color: var(--error-color);
+}
+
+.button.error:not(:disabled):hover {
+	border-color: var(--error-color);
+}
+
+/* Button Groups */
 .buttonGroup {
 	width: 100%;
 	display: flex;

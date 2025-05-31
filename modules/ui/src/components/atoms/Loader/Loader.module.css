@@ -1,11 +1,12 @@
 .loader {
-	border: 16px solid #f3f3f3;
+	--size: 20px;
+	border: var(--size) solid #f3f3f3;
 	/* Light grey */
-	border-top: 16px solid var(--accent-color);
+	border-top: var(--size) solid var(--accent-color);
 	/* Blue */
 	border-radius: 50%;
-	width: 120px;
-	height: 120px;
+	width: calc(var(--size) * 6);
+	height: calc(var(--size) * 6);
 	animation: spin 2s linear infinite;
 }
 

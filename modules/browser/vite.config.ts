@@ -49,10 +49,10 @@ export default defineConfig(({ mode }) => ({
 			reporter: ['text', 'json-summary', 'json'],
 			reportOnFailure: true,
 			thresholds: {
-				lines: 60,
-				branches: 60,
-				functions: 60,
-				statements: 60
+				lines: 70,
+				branches: 70,
+				functions: 70,
+				statements: 70,
 			},
 		},
 	},

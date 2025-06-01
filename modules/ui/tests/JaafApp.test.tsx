@@ -1,7 +1,6 @@
-import { describe, expect, test } from 'vitest';
 import { render, waitFor } from '@testing-library/preact';
-import { JaafApp } from '../src';
-import { UiModule } from 'src/services/UiModule';
+import { JaafApp, UiModule } from 'src';
+import { describe, expect, test } from 'vitest';
 
 describe('JaafApp', () => {
 	test('Renders correctly', async () => {
@@ -13,12 +12,34 @@ describe('JaafApp', () => {
 			</JaafApp>
 		));
 
-		//TODO: figure out why it only works like this
-		await new Promise((resolve) => {
-			setTimeout(resolve, 100);
-		});
-		await waitFor(() => expect(t.findByTestId('test')).toBeDefined());
+		await waitFor(() => expect(t.getByTestId('test')).toBeDefined(), { timeout: 1000 });
 
 		expect(t.container).toMatchSnapshot();
+	});
+
+
+	test('Displays error message on startup error', async () => {
+		const t = render((
+			<JaafApp setup={(async (app) => {
+				await app.use(UiModule);
+				app.registerStartupAction(() => Promise.reject('FAILURE'));
+			})}>
+				<div>SUCCESS</div>
+			</JaafApp>
+		));
+
+		await waitFor(() => expect(t.getByText('FAILURE')).toBeDefined(), { timeout: 1000 });
+
+
+		const t2 = render((
+			<JaafApp setup={(async (app) => {
+				await app.use(UiModule);
+				app.registerStartupAction(() => Promise.reject(new Error('FAILURE')));
+			})}>
+				<div>SUCCESS</div>
+			</JaafApp>
+		));
+
+		await waitFor(() => expect(t2.getByText('Error: FAILURE')).toBeDefined(), { timeout: 1000 });
 	});
 });

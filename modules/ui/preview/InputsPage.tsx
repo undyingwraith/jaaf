@@ -12,11 +12,11 @@ export function InputsPage() {
 	const buttons = (<>
 		<Button onClick={() => alert(_t('ButtonPressed'))}>{_t('Button')}</Button>
 		<Button variant={'primary'}>{_t('Primary')}</Button>
-		<Button disabled={true}>{_t('DisabledButton')}</Button>
 		<Button variant={'info'}>{_t('Info')}</Button>
 		<Button variant={'success'}>{_t('Success')}</Button>
 		<Button variant={'warning'}>{_t('Warning')}</Button>
 		<Button variant={'error'}>{_t('Error')}</Button>
+		<Button disabled={true}>{_t('DisabledButton')}</Button>
 		<ActionButton
 			action={() => new Promise((resolve, reject) => {
 				setTimeout(() => {

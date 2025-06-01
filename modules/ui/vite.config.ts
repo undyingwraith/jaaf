@@ -82,7 +82,7 @@ export default defineConfig(({ mode }) => ({
 				lines: 60,
 				branches: 60,
 				functions: 60,
-				statements: 60
+				statements: 60,
 			},
 			exclude: [
 				...configDefaults.exclude,

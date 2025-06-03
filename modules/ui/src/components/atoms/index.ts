@@ -1,5 +1,6 @@
 export * from './Alert';
 export * from './Button';
+export * from './Chip';
 export * from './Header';
 export * from './Link';
 export * from './Loader';

@@ -1,4 +1,4 @@
-import { Loader, useTranslation } from 'src';
+import { Chip, Loader, useTranslation } from 'src';
 import { Alerts } from './Alerts';
 import { Section } from './Section';
 
@@ -12,6 +12,9 @@ export function DataDisplayPage() {
 			</Section>
 			<Section title={_t('Alerts')}>
 				<Alerts />
+			</Section>
+			<Section title={_t('Chip')}>
+				<Chip>{_t('Example')}</Chip>
 			</Section>
 		</div>
 	);

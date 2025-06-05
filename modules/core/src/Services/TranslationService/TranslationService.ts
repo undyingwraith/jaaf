@@ -1,11 +1,15 @@
 import i18next from 'i18next';
-import { multiInject, injectable, optional } from 'inversify';
+import { multiInject, injectable, optional, inject } from 'inversify';
 import { ITranslationService } from './ITranslationService';
 import { ITranslation, ITranslationsSymbol } from './ITranslation';
+import { ILogService, ILogServiceSymbol } from '../LogService';
 
 @injectable()
 export class TranslationService implements ITranslationService {
-	constructor(@multiInject(ITranslationsSymbol) @optional() translations: ITranslation[]) {
+	constructor(
+		@inject(ILogServiceSymbol) private readonly log: ILogService,
+		@multiInject(ITranslationsSymbol) @optional() translations: ITranslation[]
+	) {
 		const resources: ITranslation = {};
 		for (const translationSet of translations) {
 			for (const [lang, values] of Object.entries(translationSet)) {
@@ -38,7 +42,7 @@ export class TranslationService implements ITranslationService {
 		if (i18next.exists(key)) {
 			return i18next.t(key, values);
 		} else {
-			//TODO: replace with logging service -> console.warn(`Missing translation key <${key}>`);
+			this.log.warn(`Missing translation key <${key}>`);
 			return `<${key}>`;
 		}
 	}

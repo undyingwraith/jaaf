@@ -1,5 +1,6 @@
 {
 	"AccentColor": "Accent color",
+	"ActionButton": "Action button",
 	"Alerts": "Alerts",
 	"Button": "Button",
 	"ButtonPressed": "Button pressed.",
@@ -7,11 +8,17 @@
 	"Chip": "Chip",
 	"DarkMode": "Dark mode",
 	"DataDisplay": "Data display",
+	"DisabledButton": "Disabled button",
+	"Error": "Error",
 	"Example": "Example",
 	"Home": "Home",
+	"Info": "Info",
 	"Inputs": "Inputs",
 	"Loader": "Loader",
+	"Primary": "Primary",
+	"Success": "Success",
 	"TextInputs": "Text inputs",
 	"Theme": "Theme",
+	"Warning": "Warning",
 	"WelcomeText": "Welcome to Jaaf-UI"
 }

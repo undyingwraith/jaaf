@@ -1,5 +1,6 @@
 {
 	"AccentColor": "Akzent Farbe",
+	"ActionButton": "Aktionsknopf",
 	"Alerts": "Meldebanner",
 	"Button": "Knopf",
 	"ButtonPressed": "Knopf gedrückt.",
@@ -7,11 +8,17 @@
 	"Chip": "Chip",
 	"DarkMode": "Dunkelmodus",
 	"DataDisplay": "Daten Anzeigen",
+	"DisabledButton": "Deaktivierter Knopf",
+	"Error": "Fehler",
 	"Example": "Beispiel",
 	"Home": "Home",
+	"Info": "Info",
 	"Inputs": "Eingaben",
 	"Loader": "Ladeanzeige",
+	"Primary": "Primär",
+	"Success": "Erfolg",
 	"TextInputs": "Texteingaben",
 	"Theme": "Theme",
+	"Warning": "Warnung",
 	"WelcomeText": "Wilkommen bei Jaaf-UI"
 }

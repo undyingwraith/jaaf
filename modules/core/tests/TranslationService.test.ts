@@ -1,5 +1,5 @@
 import { describe, expect, test, vi } from 'vitest';
-import { Application, ITranslation, ITranslationService, ITranslationServiceSymbol, ITranslationsSymbol, TranslationService } from '../src';
+import { Application, ILogServiceSymbol, ILogSinkSymbol, ITranslation, ITranslationService, ITranslationServiceSymbol, ITranslationsSymbol, LogService, MemoryLogSink, TranslationService } from '../src';
 
 const translations: ITranslation = {
 	en: {
@@ -18,6 +18,8 @@ const translations: ITranslation = {
 
 describe('TranslationService', () => {
 	const app = new Application();
+	app.register(LogService, ILogServiceSymbol);
+	app.register(MemoryLogSink, ILogSinkSymbol);
 	app.register(TranslationService, ITranslationServiceSymbol);
 	app.registerConstantMultiple(translations, ITranslationsSymbol);
 

@@ -1,5 +1,5 @@
 import { useSignal } from '@preact/signals';
-import { ActionButton, Button, ButtonGroup, SelectInput, TextInput, useTranslation } from 'src';
+import { ActionButton, Button, ButtonGroup, SelectInput, TextArea, TextInput, useTranslation } from 'src';
 import { Section } from './Section';
 
 export function InputsPage() {
@@ -41,6 +41,10 @@ export function InputsPage() {
 				</div>
 			</Section>
 			<Section title={_t('TextInputs')}>
+				<TextArea
+					value={textValue}
+					label={'TextArea'}
+				/>
 				<TextInput
 					value={textValue}
 					label={'TextInput'}
@@ -60,9 +64,9 @@ export function InputsPage() {
 					}}
 				/>
 				<div>
-					<p>TextInput: {textValue}</p>
-					<p>PasswordInput: {passwordValue}</p>
-					<p>SelectInput: {selectValue}</p>
+					<p>Text: {textValue}</p>
+					<p>Password: {passwordValue}</p>
+					<p>Select: {selectValue}</p>
 				</div>
 			</Section>
 		</div>

@@ -1,17 +1,24 @@
 /// <reference types="vitest" />
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import checker from 'vite-plugin-checker';
 import dts from 'vite-plugin-dts';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig(({ mode }) => ({
 	plugins: [
+		tsconfigPaths(),
 		dts({
-			insertTypesEntry: true,
-			tsconfigPath: resolve(__dirname, './tsconfig.build.json'),
+			root: '.',
+			tsconfigPath: './src/tsconfig.json',
+			rollupTypes: false,
+		}),
+		!process.env.VITEST && checker({
+			typescript: { buildMode: false, tsconfigPath: 'src' }
 		}),
 	],
 	build: {
-		emptyOutDir: mode !== 'dev',
+		emptyOutDir: mode != 'dev',
 		sourcemap: mode == 'dev',
 		manifest: false,
 		minify: mode == 'dev' ? 'esbuild' : 'terser',
@@ -19,7 +26,7 @@ export default defineConfig(({ mode }) => ({
 			name: 'jaafCore',
 			entry: resolve(__dirname, 'src/index.ts'),
 			fileName: 'index',
-			formats: ['es', 'umd']
+			formats: ['es', 'umd'],
 		},
 		rollupOptions: {
 			external: ['i18next', 'inversify', 'reflect-metadata'],
@@ -32,6 +39,7 @@ export default defineConfig(({ mode }) => ({
 		},
 	},
 	test: {
+		name: { label: 'Core', color: 'blue' },
 		coverage: {
 			reporter: ['text', 'json-summary', 'json'],
 			reportOnFailure: true,

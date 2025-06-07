@@ -1,5 +1,5 @@
 import { describe, expect, test, vi } from 'vitest';
-import { Application, ILogServiceSymbol, ILogSinkSymbol, ITranslation, ITranslationService, ITranslationServiceSymbol, ITranslationsSymbol, LogService, MemoryLogSink, TranslationService } from '../src';
+import { Application, ILogServiceSymbol, ILogSinkSymbol, ITranslation, ITranslationService, ITranslationServiceSymbol, ITranslationsSymbol, LogService, MemoryLogSink, TranslationService } from 'src';
 
 const translations: ITranslation = {
 	en: {

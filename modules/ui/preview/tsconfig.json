@@ -1,0 +1,23 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"outDir": "../dist",
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"noEmit": false,
+		"paths": {
+			"src": [
+				"../src"
+			]
+		}
+	},
+	"include": [
+		"."
+	],
+	"references": [
+		{
+			"path": "../src"
+		}
+	]
+}

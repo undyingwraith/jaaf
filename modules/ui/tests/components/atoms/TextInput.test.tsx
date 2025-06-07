@@ -1,63 +1,68 @@
-import { act, fireEvent, render } from '@testing-library/preact';
-import { describe, expect, test } from 'vitest';
-import { TextInput } from 'src/components/atoms/TextInput';
 import { Signal } from '@preact/signals';
+import { act, fireEvent } from '@testing-library/preact';
+import { TextInput } from 'src';
+import { performRender } from 'testing';
+import { describe, expect, test } from 'vitest';
 
 describe('TextInput', () => {
-	test('Text input changes value', () => {
+	test('Text input changes value', async () => {
 		const value = new Signal('');
-		const t = render(
+
+		await performRender((
 			<TextInput
 				value={value}
 			/>
-		);
-		const el = t.getByTestId('input');
+		), async (t) => {
+			const el = t.getByTestId('input');
 
-		act(() => {
-			fireEvent.input(el, {
-				target: {
-					value: 'test',
-				},
+			await act(() => {
+				fireEvent.input(el, {
+					target: {
+						value: 'test',
+					},
+				});
 			});
-		});
 
-		expect(value.peek()).toBe('test');
-
+			expect(value.peek()).toBe('test');
 
 
-		act(() => {
-			fireEvent.input(el, {
-				target: {
-					value: 'another test',
-				},
+
+			await act(() => {
+				fireEvent.input(el, {
+					target: {
+						value: 'another test',
+					},
+				});
 			});
-		});
 
-		expect(value.peek()).toBe('another test');
+			expect(value.peek()).toBe('another test');
+		});
 	});
 
-	test('Changes in signal are reflected in component', () => {
+	test('Changes in signal are reflected in component', async () => {
 		const value = new Signal('');
-		const t = render(
+
+		await performRender((
 			<TextInput
 				value={value}
 			/>
-		);
+		), async (t) => {
 
-		const el = t.getByTestId('input') as HTMLInputElement;
+			const el = t.getByTestId('input') as HTMLInputElement;
 
-		expect(el.value).toBe('');
+			expect(el.value).toBe('');
 
-		act(() => {
-			value.value = 'test';
+			await act(() => {
+				value.value = 'test';
+			});
+
+			expect(el.value).toBe('test');
+
+			await act(() => {
+				value.value = 'another test';
+			});
+
+			expect(el.value).toBe('another test');
 		});
-
-		expect(el.value).toBe('test');
-
-		act(() => {
-			value.value = 'another test';
-		});
-
-		expect(el.value).toBe('another test');
 	});
 });

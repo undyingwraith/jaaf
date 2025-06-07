@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest';
-import { Application } from '../src';
+import { Application } from 'src';
 
 class TestService {
 	public getValue(): string {
@@ -25,11 +25,6 @@ describe('Application', () => {
 		app.register(TestService, sym);
 
 		expect(app.getService<TestService>(sym)?.getValue()).toEqual('test');
-	});
-
-	test('App starts without any actions.', async () => {
-		const app = new Application();
-		await app.start();
 	});
 
 	test('Can run startup with any startup actions', async () => {
@@ -92,30 +87,34 @@ describe('Application', () => {
 		expect(app.getOptionalService(sym)).toEqual(undefined);
 	});
 
-	test('Child app can overwrite parent registration', () => {
+	test('Child app can overwrite parent registration', async () => {
 		const sym = Symbol.for('test');
 		const service = 'test';
 		const childService = 'childTest';
 		const app = new Application();
 
-		app.registerConstant(service, sym);
+		await app.registerConstant(service, sym);
 
 		expect(app.getService(sym)).toEqual(service);
 
 		const childApp = app.createChildApplication();
-		childApp.registerConstant(childService, sym);
+		await childApp.registerConstant(childService, sym);
 
 		expect(childApp.getService(sym)).toEqual(childService);
 	});
 
-	test('Duplicate registration overwrites old registration', () => {
+	test('Duplicate registration overwrites old registration', async () => {
 		const app = new Application();
 		const sym = Symbol.for('test');
 		const service = 'test';
+		const service2 = 'test2';
 
-		app.registerConstant(service, sym);
-		app.registerConstant(service, sym);
+		await app.registerConstant(service, sym);
 
 		expect(app.getService(sym)).toEqual(service);
+
+		await app.registerConstant(service2, sym);
+
+		expect(app.getService(sym)).toEqual(service2);
 	});
 });

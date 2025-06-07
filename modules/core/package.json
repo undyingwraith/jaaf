@@ -4,7 +4,9 @@
 	"version": "0.2.7",
 	"repository": "github:undyingwraith/jaaf",
 	"files": [
-		"dist/**"
+		"dist/**/*.d.ts",
+		"dist/**/*.cjs",
+		"dist/**/*.js"
 	],
 	"main": "./dist/index.umd.cjs",
 	"types": "./dist/index.d.ts",
@@ -22,17 +24,19 @@
 		"test": "vitest run"
 	},
 	"devDependencies": {
-		"@types/node": "^22.13.9",
-		"@vitest/coverage-v8": "^3.0.7",
-		"terser": "^5.39.0",
-		"typescript": "^5.7.3",
-		"vite": "^6.2.0",
-		"vite-plugin-dts": "^4.5.3",
-		"vitest": "^3.0.7"
+		"@types/node": "^22.15.30",
+		"@vitest/coverage-v8": "^3.2.2",
+		"terser": "^5.41.0",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.5",
+		"vite-plugin-checker": "^0.9.3",
+		"vite-plugin-dts": "^4.5.4",
+		"vite-tsconfig-paths": "^5.1.4",
+		"vitest": "^3.2.2"
 	},
 	"dependencies": {
-		"i18next": "^24.2.2",
-		"inversify": "^7.0.1",
+		"i18next": "^25.2.1",
+		"inversify": "^7.5.2",
 		"reflect-metadata": "^0.2.2"
 	}
 }

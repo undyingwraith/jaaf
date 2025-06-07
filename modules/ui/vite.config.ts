@@ -9,6 +9,7 @@ import { configDefaults } from 'vitest/config';
 
 export default defineConfig(({ mode }) => ({
 	plugins: [
+		tsconfigPaths(),
 		preact({
 			babel: {
 				plugins: [
@@ -19,13 +20,13 @@ export default defineConfig(({ mode }) => ({
 			}
 		}),
 		dts({
-			tsconfigPath: resolve(__dirname, './tsconfig.build.json'),
-			include: ['src'],
+			root: '.',
+			tsconfigPath: './src/tsconfig.json',
+			rollupTypes: false,
 		}),
-		checker({
-			typescript: { buildMode: true }
+		!process.env.VITEST && checker({
+			typescript: { buildMode: false, tsconfigPath: 'src' }
 		}),
-		tsconfigPaths(),
 	],
 	build: {
 		lib: {
@@ -65,6 +66,7 @@ export default defineConfig(({ mode }) => ({
 		minify: mode == 'dev' ? 'esbuild' : 'terser',
 	},
 	test: {
+		environment: 'jsdom',
 		browser: {
 			headless: true,
 			enabled: true,
@@ -91,7 +93,10 @@ export default defineConfig(({ mode }) => ({
 				'**/*.d.ts',
 			],
 		},
-		globals: true,
-		environment: 'jsdom',
+		css: {
+			modules: {
+				classNameStrategy: 'stable',
+			},
+		},
 	},
 }));

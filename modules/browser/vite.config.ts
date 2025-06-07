@@ -1,13 +1,20 @@
 /// <reference types="vitest" />
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import checker from 'vite-plugin-checker';
 import dts from 'vite-plugin-dts';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig(({ mode }) => ({
 	plugins: [
+		tsconfigPaths(),
 		dts({
-			insertTypesEntry: true,
-			tsconfigPath: resolve(__dirname, './tsconfig.build.json'),
+			root: '.',
+			tsconfigPath: './src/tsconfig.json',
+			rollupTypes: false,
+		}),
+		!process.env.VITEST && checker({
+			typescript: { buildMode: false, tsconfigPath: 'src' }
 		}),
 	],
 	build: {
@@ -33,7 +40,6 @@ export default defineConfig(({ mode }) => ({
 		},
 	},
 	test: {
-		globals: true,
 		browser: {
 			headless: true,
 			enabled: true,

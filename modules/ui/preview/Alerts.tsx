@@ -2,7 +2,6 @@ import { Alert } from 'src';
 
 export function Alerts() {
 	return (<>
-
 		<div>
 			<Alert severity={'success'}>
 				This is a success alert.

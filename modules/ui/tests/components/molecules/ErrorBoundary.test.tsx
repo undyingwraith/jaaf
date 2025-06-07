@@ -1,6 +1,6 @@
-import { render } from '@testing-library/preact';
-import { ErrorBoundary } from 'src/components/molecules';
+import { ErrorBoundary } from 'src';
 import { describe, expect, test } from 'vitest';
+import { performRender } from 'testing';
 
 describe('ErrorBoundary', () => {
 	test('Catches Error', () => {
@@ -8,13 +8,14 @@ describe('ErrorBoundary', () => {
 			throw new Error('TestError');
 			return (<div />);
 		}
-		const t = render(
+
+		performRender((
 			<ErrorBoundary>
 				<TestComponent />
 			</ErrorBoundary>
-		);
-
-		expect(t.getByTestId('error-message')).not.toBeNull();
-		expect(t.getByTestId('error-message')).not.toBeUndefined();
+		), (t) => {
+			expect(t.getByTestId('error-message')).not.toBeNull();
+			expect(t.getByTestId('error-message')).not.toBeUndefined();
+		});
 	});
 });

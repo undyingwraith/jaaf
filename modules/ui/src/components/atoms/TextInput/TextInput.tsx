@@ -1,5 +1,5 @@
 import { Signal } from '@preact/signals';
-import { CanBeSignal } from 'src/types';
+import { CanBeSignal } from '../../../types';
 import styles from './TextInput.module.css';
 
 export interface ITextInputProps {

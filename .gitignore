@@ -1,5 +1,6 @@
 dist
 node_modules
+*.tsbuildinfo
 .yarn/*
 #!.yarn/cache
 !.yarn/patches

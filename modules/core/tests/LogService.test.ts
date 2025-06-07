@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, test } from 'vitest';
-import { Application, IApplication, ILogService, ILogServiceSymbol, ILogSinkSymbol, LogService, MemoryLogSink } from '../src';
+import { Application, ILogService, ILogServiceSymbol, ILogSinkSymbol, LogService, MemoryLogSink } from 'src';
 
 describe('LogService', () => {
 	let app: Application;

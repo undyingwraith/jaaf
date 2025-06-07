@@ -1,21 +1,25 @@
 {
 	"name": "jaaf",
-	"version": "0.2.0",
 	"description": "Just Another App Framework",
 	"author": "UndyingWraith",
 	"license": "MIT",
 	"private": true,
 	"type": "module",
-	"packageManager": "yarn@4.9.1",
+	"packageManager": "yarn@4.9.2",
 	"workspaces": [
 		"modules/*"
 	],
 	"scripts": {
 		"watch": "yarn workspaces foreach -Api run watch",
 		"build": "yarn workspaces foreach -Apt run build",
-		"test": "yarn workspaces foreach -Apt run test"
+		"test": "yarn workspaces foreach -Apt run test",
+		"clean": "yarn rimraf -g './modules/*/dist'"
 	},
 	"devDependencies": {
-		"typescript": "^5.7.3"
+		"rimraf": "^6.0.1",
+		"typescript": "^5.8.3"
+	},
+	"resolutions": {
+		"vite": "6.3.5"
 	}
 }

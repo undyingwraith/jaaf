@@ -1,5 +1,5 @@
 import { Signal } from '@preact/signals';
-import { CanBeSignal } from 'src/types';
+import { CanBeSignal } from '../../../types';
 
 export interface ISelectInputProps {
 	value: Signal<string>;

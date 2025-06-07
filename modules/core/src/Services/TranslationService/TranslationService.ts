@@ -1,8 +1,8 @@
 import i18next from 'i18next';
-import { multiInject, injectable, optional, inject } from 'inversify';
-import { ITranslationService } from './ITranslationService';
+import { inject, injectable, multiInject, optional } from 'inversify';
+import { type ILogService, ILogServiceSymbol } from '../LogService';
 import { ITranslation, ITranslationsSymbol } from './ITranslation';
-import { ILogService, ILogServiceSymbol } from '../LogService';
+import { ITranslationService } from './ITranslationService';
 
 @injectable()
 export class TranslationService implements ITranslationService {

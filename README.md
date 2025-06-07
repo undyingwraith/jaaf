@@ -63,3 +63,19 @@ const service = app.getService<ITranslationService>(ITranslationServiceSymbol);
 
 console.log(service.translate('Example'));
 ```
+
+
+## Development
+
+### Building it yourself
+
+```bash
+yarn install
+yarn build
+```
+
+### Testing
+
+```bash
+yarn clean && yarn build && yarn test --coverage
+```

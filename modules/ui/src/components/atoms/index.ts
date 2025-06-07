@@ -7,3 +7,4 @@ export * from './Loader';
 export * from './SelectInput';
 export * from './TextInput';
 export { ButtonGroup } from './ButtonGroup';
+export { Markdown } from './Markdown';

@@ -50,6 +50,7 @@
 		"@undyingwraith/jaaf-core": "workspace:^",
 		"color": "^5.0.0",
 		"inversify": "^7.5.2",
+		"marked": "^15.0.12",
 		"preact": "^10.26.8",
 		"reflect-metadata": "^0.2.2",
 		"wouter-preact": "^3.7.1"

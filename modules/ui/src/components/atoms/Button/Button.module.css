@@ -26,6 +26,7 @@ a.button:hover {
 	outline: 4px auto -webkit-focus-ring-color;
 }
 
+.buttonGroup.fullWidth .button,
 .button.fullWidth {
 	width: 100%;
 }
@@ -78,12 +79,14 @@ a.button:hover {
 	flex-grow: 1;
 }
 
-.buttonGroup .button:not(:first-child) {
+.buttonGroup>.button:not(:first-child),
+.buttonGroup>*:not(:first-child) .button {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
 
-.buttonGroup .button:not(:last-child) {
+.buttonGroup>.button:not(:last-child),
+.buttonGroup>*:not(:last-child) .button {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }

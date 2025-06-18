@@ -1,7 +1,7 @@
 {
 	"name": "@undyingwraith/jaaf-core",
 	"type": "module",
-	"version": "0.2.7",
+	"version": "0.3.0",
 	"repository": "github:undyingwraith/jaaf",
 	"files": [
 		"dist/**/*.d.ts",

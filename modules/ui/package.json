@@ -1,7 +1,7 @@
 {
 	"name": "@undyingwraith/jaaf-ui",
 	"type": "module",
-	"version": "0.2.6",
+	"version": "0.3.0",
 	"repository": "github:undyingwraith/jaaf",
 	"main": "./dist/index.umd.cjs",
 	"module": "./dist/index.js",

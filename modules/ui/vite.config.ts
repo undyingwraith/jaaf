@@ -25,7 +25,7 @@ export default defineConfig(({ mode }) => ({
 			rollupTypes: false,
 		}),
 		!process.env.VITEST && checker({
-			typescript: { buildMode: false, tsconfigPath: 'src' }
+			typescript: { buildMode: false, tsconfigPath: './src/tsconfig.json' }
 		}),
 	],
 	build: {

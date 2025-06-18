@@ -39,6 +39,14 @@ export function InputsPage() {
 						{buttons}
 					</ButtonGroup>
 				</div>
+				<div>
+					<Button onClick={() => alert(_t('ButtonPressed'))} fullWidth>{_t('Button')}</Button>
+				</div>
+				<div>
+					<ButtonGroup fullWidth>
+						{buttons}
+					</ButtonGroup>
+				</div>
 			</Section>
 			<Section title={_t('TextInputs')}>
 				<TextArea

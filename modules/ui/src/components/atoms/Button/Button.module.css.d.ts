@@ -1,6 +1,7 @@
 declare const styles = {
 	button: string,
 	buttonGroup: string,
+	fullWidth: string,
 	// Variants
 	default: string,
 	primary: string,

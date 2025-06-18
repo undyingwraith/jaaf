@@ -26,6 +26,10 @@ a.button:hover {
 	outline: 4px auto -webkit-focus-ring-color;
 }
 
+.button.fullWidth {
+	width: 100%;
+}
+
 /* Variants */
 .button.primary {
 	color: var(--accent-color);
@@ -70,14 +74,16 @@ a.button:hover {
 	display: flex;
 }
 
-.buttonGroup>.dropdown:not(:first-child) .button,
-.buttonGroup>.button:not(:first-child) {
+.buttonGroup.fullWidth * {
+	flex-grow: 1;
+}
+
+.buttonGroup .button:not(:first-child) {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
 
-.buttonGroup>.dropdown:not(:last-child) .button,
-.buttonGroup>.button:not(:last-child) {
+.buttonGroup .button:not(:last-child) {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }

@@ -97,5 +97,5 @@ export class Application implements IApplication, IApplicationRegistration {
 	/**
 	 * The IOC {@link Container} of the {@link IApplication}.
 	 */
-	private readonly container: Container;
+	protected readonly container: Container;
 }

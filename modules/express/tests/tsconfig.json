@@ -1,0 +1,16 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"composite": true,
+		"paths": {
+			"src": [
+				"../src"
+			]
+		}
+	},
+	"references": [
+		{
+			"path": "../src"
+		}
+	]
+}

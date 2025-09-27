@@ -5,12 +5,18 @@
 		"paths": {
 			"src": [
 				"../src"
+			],
+			"testing": [
+				"../testing"
 			]
 		}
 	},
 	"references": [
 		{
 			"path": "../src"
+		},
+		{
+			"path": "../testing"
 		}
 	]
 }

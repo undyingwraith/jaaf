@@ -30,6 +30,8 @@ export default defineConfig(({ mode }) => ({
 		},
 		rollupOptions: {
 			external: [
+				'@inversifyjs/http-core',
+				'@inversifyjs/http-express',
 				'@undyingwraith/jaaf-core',
 				'body-parser',
 				'i18next',
@@ -41,11 +43,11 @@ export default defineConfig(({ mode }) => ({
 			],
 			output: {
 				globals: {
+					'@inversifyjs/http-express': 'httpExpress',
 					'@undyingwraith/jaaf-core': 'jaafCore',
 					'body-parser': 'bodyParser',
 					i18next: 'i18next',
 					inversify: 'inversify',
-					'inversify-express-utils': 'inversifyExpressUtils',
 					'swagger-jsdoc': 'swaggerJSDoc',
 					'swagger-ui-express': 'swaggerUi',
 				},

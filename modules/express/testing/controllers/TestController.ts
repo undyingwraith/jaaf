@@ -1,10 +1,9 @@
-import { type Response } from 'express';
-import { controller, httpGet, response } from 'inversify-express-utils';
+import { Controller, Get, } from '@inversifyjs/http-core';
 
-@controller('/test')
+@Controller('/test')
 export class TestController {
-	@httpGet('/')
-	public get(@response() res: Response) {
-		res.sendStatus(200);
+	@Get('/')
+	public get() {
+		return '200 Ok';
 	}
 }

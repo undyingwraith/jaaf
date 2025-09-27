@@ -1,8 +1,9 @@
+import { InversifyExpressHttpAdapter } from '@inversifyjs/http-express';
 import { Application } from '@undyingwraith/jaaf-core';
 import * as bodyParser from 'body-parser';
-import * as cors from 'cors';
-import { InversifyExpressServer } from 'inversify-express-utils';
-import * as swaggerJSDoc from 'swagger-jsdoc';
+import cors from 'cors';
+import { Newable } from 'inversify';
+import swaggerJSDoc from 'swagger-jsdoc';
 import * as swaggerUi from 'swagger-ui-express';
 import { IExpressOptions } from './IExpressOptions';
 
@@ -12,38 +13,47 @@ export class ExpressApplication extends Application {
 
 		this.options = { ...this.options, ...options };
 
-		this.server = new InversifyExpressServer(this.container)
-			.setConfig((app) => {
-				app.use(bodyParser.urlencoded({
-					extended: true
-				}));
-				app.use(bodyParser.json());
-				app.use(cors());
+		this.adapter = new InversifyExpressHttpAdapter(this.container);
+	}
 
-				// Setup swagger api docs
-				if (this.options.enableApiDocs) {
-					const swaggerSpec = swaggerJSDoc({
-						swaggerDefinition: {
-							openapi: '3.0.0',
-							info: this.options.swaggerInfo,
-						},
-						apis: this.options.controllerPaths,
-					});
-					app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-				}
-			});
+	public registerController<T>(controller: Newable<T>) {
+		this.container.bind(controller).toSelf().inSingletonScope();
 	}
 
 	public override async start() {
 		await super.start();
-		console.log('started1');
-		await this.server
-			.build()
-			.listen(this.options.port);
-		console.log('started2');
+		const server = await this.adapter.build();
+
+		server.use(bodyParser.urlencoded({
+			extended: true
+		}));
+		server.use(bodyParser.json());
+		server.use(cors());
+
+		// Setup swagger api docs
+		if (this.options.enableApiDocs) {
+			const swaggerSpec = swaggerJSDoc({
+				swaggerDefinition: {
+					openapi: '3.0.0',
+					info: this.options.swaggerInfo,
+				},
+				apis: this.options.controllerPaths,
+			});
+			server.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+		}
+
+		await new Promise<void>((resolve, reject) => {
+			server.listen(this.options.port, (e) => {
+				if (e) {
+					reject(e);
+				} else {
+					resolve();
+				}
+			});
+		});
 	}
 
-	private server: InversifyExpressServer;
+	private adapter: InversifyExpressHttpAdapter;
 	private options: IExpressOptions = {
 		port: 3000,
 		enableApiDocs: false,
